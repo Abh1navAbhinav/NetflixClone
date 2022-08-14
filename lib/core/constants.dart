@@ -10,4 +10,11 @@ const kButtonColorWhite = Colors.white;
 
 // Border radius
 
-  BorderRadius kRadius20  =  BorderRadius.circular(20);
+BorderRadius kRadius20 = BorderRadius.circular(20);
+
+// Text Styles
+
+TextStyle kHomeTitleTextStyle = const TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.bold,
+);
