@@ -7,3 +7,7 @@ const kWhite = Colors.white;
 const kBlack = Colors.black;
 const kButtonColorBlue = Colors.blue;
 const kButtonColorWhite = Colors.white;
+
+// Border radius
+
+  BorderRadius kRadius20  =  BorderRadius.circular(20);
