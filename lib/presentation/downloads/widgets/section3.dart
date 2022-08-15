@@ -31,7 +31,7 @@ class Section3 extends StatelessWidget {
         ),
         kHeight,
         MaterialButton(
-          color: kButtonColorWhite,
+          color: kWhite,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5),
           ),

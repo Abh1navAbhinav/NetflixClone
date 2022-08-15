@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netflix/core/constants.dart';
+import 'package:netflix/presentation/fast_laugh/widgets/video_action_widget.dart';
 
 class VideoListItem extends StatelessWidget {
   const VideoListItem({
@@ -29,7 +30,6 @@ class VideoListItem extends StatelessWidget {
                 //left side
 
                 CircleAvatar(
-                 
                   backgroundColor: Colors.black.withOpacity(0.5),
                   radius: 30,
                   child: IconButton(
@@ -46,13 +46,12 @@ class VideoListItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: const [
                     Padding(
-                      padding: EdgeInsets.symmetric(vertical:10),
+                      padding: EdgeInsets.symmetric(vertical: 10),
                       child: CircleAvatar(
                         radius: 30,
-                         backgroundImage: NetworkImage(
-                          
-                      "https://www.themoviedb.org/t/p/w220_and_h330_face/zuNOQVI4rEaqwknrfQUVKtlKE2C.jpg",
-                  ),
+                        backgroundImage: NetworkImage(
+                          "https://www.themoviedb.org/t/p/w220_and_h330_face/zuNOQVI4rEaqwknrfQUVKtlKE2C.jpg",
+                        ),
                       ),
                     ),
                     VideoActionWidget(
@@ -78,42 +77,6 @@ class VideoListItem extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-}
-
-class VideoActionWidget extends StatelessWidget {
-  const VideoActionWidget({
-    Key? key,
-    required this.icon,
-    required this.text,
-  }) : super(key: key);
-  final IconData icon;
-  final String text;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        vertical: 10,
-        horizontal: 10,
-      ),
-      child: Column(
-        children: [
-          Icon(
-            icon,
-            color: Colors.white,
-            size: 30,
-          ),
-          Text(
-            text,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-            ),
-          ),
-        ],
-      ),
     );
   }
 }
