@@ -21,20 +21,15 @@ class SearchResp {
 
 @JsonSerializable()
 class SearchResultData {
-  @JsonKey(name: 'id')
-  int? id;
-
   @JsonKey(name: 'original_title')
   String? originalTitle;
 
   @JsonKey(name: 'poster_path')
   String? posterPath;
 
-
   String get PosterImageUrl => '$imageAppendUrl$posterPath';
 
   SearchResultData({
-    this.id,
     this.originalTitle,
     this.posterPath,
   });
