@@ -5,8 +5,7 @@ class VideoWidgetNewAndHot extends StatelessWidget {
   final String image;
   const VideoWidgetNewAndHot({
     Key? key,
-    this.image =
-        "https://www.themoviedb.org/t/p/w355_and_h200_multi_faces/vkELTbRMS0vtoYa6uafVvP8iPWu.jpg",
+    required this.image,
   }) : super(key: key);
 
   @override

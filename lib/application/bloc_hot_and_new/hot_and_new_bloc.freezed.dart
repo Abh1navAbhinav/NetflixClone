@@ -18,33 +18,42 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$HotAndNewEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function() loadDataInComingSoon,
+    required TResult Function() loadDataInEveryOneIsWatching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? loadDataInComingSoon,
+    TResult Function()? loadDataInEveryOneIsWatching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? loadDataInComingSoon,
+    TResult Function()? loadDataInEveryOneIsWatching,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(LoadDataInComingSoon value) loadDataInComingSoon,
+    required TResult Function(LoadDataInEveryOneIsWatching value)
+        loadDataInEveryOneIsWatching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(LoadDataInComingSoon value)? loadDataInComingSoon,
+    TResult Function(LoadDataInEveryOneIsWatching value)?
+        loadDataInEveryOneIsWatching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(LoadDataInComingSoon value)? loadDataInComingSoon,
+    TResult Function(LoadDataInEveryOneIsWatching value)?
+        loadDataInEveryOneIsWatching,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -68,36 +77,38 @@ class _$HotAndNewEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$_StartedCopyWith<$Res> {
-  factory _$$_StartedCopyWith(
-          _$_Started value, $Res Function(_$_Started) then) =
-      __$$_StartedCopyWithImpl<$Res>;
+abstract class _$$LoadDataInComingSoonCopyWith<$Res> {
+  factory _$$LoadDataInComingSoonCopyWith(_$LoadDataInComingSoon value,
+          $Res Function(_$LoadDataInComingSoon) then) =
+      __$$LoadDataInComingSoonCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_StartedCopyWithImpl<$Res> extends _$HotAndNewEventCopyWithImpl<$Res>
-    implements _$$_StartedCopyWith<$Res> {
-  __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
-      : super(_value, (v) => _then(v as _$_Started));
+class __$$LoadDataInComingSoonCopyWithImpl<$Res>
+    extends _$HotAndNewEventCopyWithImpl<$Res>
+    implements _$$LoadDataInComingSoonCopyWith<$Res> {
+  __$$LoadDataInComingSoonCopyWithImpl(_$LoadDataInComingSoon _value,
+      $Res Function(_$LoadDataInComingSoon) _then)
+      : super(_value, (v) => _then(v as _$LoadDataInComingSoon));
 
   @override
-  _$_Started get _value => super._value as _$_Started;
+  _$LoadDataInComingSoon get _value => super._value as _$LoadDataInComingSoon;
 }
 
 /// @nodoc
 
-class _$_Started implements _Started {
-  const _$_Started();
+class _$LoadDataInComingSoon implements LoadDataInComingSoon {
+  const _$LoadDataInComingSoon();
 
   @override
   String toString() {
-    return 'HotAndNewEvent.started()';
+    return 'HotAndNewEvent.loadDataInComingSoon()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Started);
+        (other.runtimeType == runtimeType && other is _$LoadDataInComingSoon);
   }
 
   @override
@@ -106,27 +117,30 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function() loadDataInComingSoon,
+    required TResult Function() loadDataInEveryOneIsWatching,
   }) {
-    return started();
+    return loadDataInComingSoon();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? loadDataInComingSoon,
+    TResult Function()? loadDataInEveryOneIsWatching,
   }) {
-    return started?.call();
+    return loadDataInComingSoon?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? loadDataInComingSoon,
+    TResult Function()? loadDataInEveryOneIsWatching,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started();
+    if (loadDataInComingSoon != null) {
+      return loadDataInComingSoon();
     }
     return orElse();
   }
@@ -134,69 +148,164 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(LoadDataInComingSoon value) loadDataInComingSoon,
+    required TResult Function(LoadDataInEveryOneIsWatching value)
+        loadDataInEveryOneIsWatching,
   }) {
-    return started(this);
+    return loadDataInComingSoon(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(LoadDataInComingSoon value)? loadDataInComingSoon,
+    TResult Function(LoadDataInEveryOneIsWatching value)?
+        loadDataInEveryOneIsWatching,
   }) {
-    return started?.call(this);
+    return loadDataInComingSoon?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(LoadDataInComingSoon value)? loadDataInComingSoon,
+    TResult Function(LoadDataInEveryOneIsWatching value)?
+        loadDataInEveryOneIsWatching,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started(this);
+    if (loadDataInComingSoon != null) {
+      return loadDataInComingSoon(this);
     }
     return orElse();
   }
 }
 
-abstract class _Started implements HotAndNewEvent {
-  const factory _Started() = _$_Started;
+abstract class LoadDataInComingSoon implements HotAndNewEvent {
+  const factory LoadDataInComingSoon() = _$LoadDataInComingSoon;
+}
+
+/// @nodoc
+abstract class _$$LoadDataInEveryOneIsWatchingCopyWith<$Res> {
+  factory _$$LoadDataInEveryOneIsWatchingCopyWith(
+          _$LoadDataInEveryOneIsWatching value,
+          $Res Function(_$LoadDataInEveryOneIsWatching) then) =
+      __$$LoadDataInEveryOneIsWatchingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadDataInEveryOneIsWatchingCopyWithImpl<$Res>
+    extends _$HotAndNewEventCopyWithImpl<$Res>
+    implements _$$LoadDataInEveryOneIsWatchingCopyWith<$Res> {
+  __$$LoadDataInEveryOneIsWatchingCopyWithImpl(
+      _$LoadDataInEveryOneIsWatching _value,
+      $Res Function(_$LoadDataInEveryOneIsWatching) _then)
+      : super(_value, (v) => _then(v as _$LoadDataInEveryOneIsWatching));
+
+  @override
+  _$LoadDataInEveryOneIsWatching get _value =>
+      super._value as _$LoadDataInEveryOneIsWatching;
+}
+
+/// @nodoc
+
+class _$LoadDataInEveryOneIsWatching implements LoadDataInEveryOneIsWatching {
+  const _$LoadDataInEveryOneIsWatching();
+
+  @override
+  String toString() {
+    return 'HotAndNewEvent.loadDataInEveryOneIsWatching()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadDataInEveryOneIsWatching);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadDataInComingSoon,
+    required TResult Function() loadDataInEveryOneIsWatching,
+  }) {
+    return loadDataInEveryOneIsWatching();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? loadDataInComingSoon,
+    TResult Function()? loadDataInEveryOneIsWatching,
+  }) {
+    return loadDataInEveryOneIsWatching?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadDataInComingSoon,
+    TResult Function()? loadDataInEveryOneIsWatching,
+    required TResult orElse(),
+  }) {
+    if (loadDataInEveryOneIsWatching != null) {
+      return loadDataInEveryOneIsWatching();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoadDataInComingSoon value) loadDataInComingSoon,
+    required TResult Function(LoadDataInEveryOneIsWatching value)
+        loadDataInEveryOneIsWatching,
+  }) {
+    return loadDataInEveryOneIsWatching(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LoadDataInComingSoon value)? loadDataInComingSoon,
+    TResult Function(LoadDataInEveryOneIsWatching value)?
+        loadDataInEveryOneIsWatching,
+  }) {
+    return loadDataInEveryOneIsWatching?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoadDataInComingSoon value)? loadDataInComingSoon,
+    TResult Function(LoadDataInEveryOneIsWatching value)?
+        loadDataInEveryOneIsWatching,
+    required TResult orElse(),
+  }) {
+    if (loadDataInEveryOneIsWatching != null) {
+      return loadDataInEveryOneIsWatching(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadDataInEveryOneIsWatching implements HotAndNewEvent {
+  const factory LoadDataInEveryOneIsWatching() = _$LoadDataInEveryOneIsWatching;
 }
 
 /// @nodoc
 mixin _$HotAndNewState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-  }) =>
+  List<HotAndNewData> get comingSoonList => throw _privateConstructorUsedError;
+  List<HotAndNewData> get everyoneIsWatchingList =>
       throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) =>
+  bool get isLoading => throw _privateConstructorUsedError;
+  bool get hasError => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $HotAndNewStateCopyWith<HotAndNewState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -205,6 +314,11 @@ abstract class $HotAndNewStateCopyWith<$Res> {
   factory $HotAndNewStateCopyWith(
           HotAndNewState value, $Res Function(HotAndNewState) then) =
       _$HotAndNewStateCopyWithImpl<$Res>;
+  $Res call(
+      {List<HotAndNewData> comingSoonList,
+      List<HotAndNewData> everyoneIsWatchingList,
+      bool isLoading,
+      bool hasError});
 }
 
 /// @nodoc
@@ -215,13 +329,47 @@ class _$HotAndNewStateCopyWithImpl<$Res>
   final HotAndNewState _value;
   // ignore: unused_field
   final $Res Function(HotAndNewState) _then;
+
+  @override
+  $Res call({
+    Object? comingSoonList = freezed,
+    Object? everyoneIsWatchingList = freezed,
+    Object? isLoading = freezed,
+    Object? hasError = freezed,
+  }) {
+    return _then(_value.copyWith(
+      comingSoonList: comingSoonList == freezed
+          ? _value.comingSoonList
+          : comingSoonList // ignore: cast_nullable_to_non_nullable
+              as List<HotAndNewData>,
+      everyoneIsWatchingList: everyoneIsWatchingList == freezed
+          ? _value.everyoneIsWatchingList
+          : everyoneIsWatchingList // ignore: cast_nullable_to_non_nullable
+              as List<HotAndNewData>,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hasError: hasError == freezed
+          ? _value.hasError
+          : hasError // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
+abstract class _$$_InitialCopyWith<$Res>
+    implements $HotAndNewStateCopyWith<$Res> {
   factory _$$_InitialCopyWith(
           _$_Initial value, $Res Function(_$_Initial) then) =
       __$$_InitialCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {List<HotAndNewData> comingSoonList,
+      List<HotAndNewData> everyoneIsWatchingList,
+      bool isLoading,
+      bool hasError});
 }
 
 /// @nodoc
@@ -232,84 +380,114 @@ class __$$_InitialCopyWithImpl<$Res> extends _$HotAndNewStateCopyWithImpl<$Res>
 
   @override
   _$_Initial get _value => super._value as _$_Initial;
+
+  @override
+  $Res call({
+    Object? comingSoonList = freezed,
+    Object? everyoneIsWatchingList = freezed,
+    Object? isLoading = freezed,
+    Object? hasError = freezed,
+  }) {
+    return _then(_$_Initial(
+      comingSoonList: comingSoonList == freezed
+          ? _value._comingSoonList
+          : comingSoonList // ignore: cast_nullable_to_non_nullable
+              as List<HotAndNewData>,
+      everyoneIsWatchingList: everyoneIsWatchingList == freezed
+          ? _value._everyoneIsWatchingList
+          : everyoneIsWatchingList // ignore: cast_nullable_to_non_nullable
+              as List<HotAndNewData>,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hasError: hasError == freezed
+          ? _value.hasError
+          : hasError // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Initial implements _Initial {
-  const _$_Initial();
+  const _$_Initial(
+      {required final List<HotAndNewData> comingSoonList,
+      required final List<HotAndNewData> everyoneIsWatchingList,
+      required this.isLoading,
+      required this.hasError})
+      : _comingSoonList = comingSoonList,
+        _everyoneIsWatchingList = everyoneIsWatchingList;
+
+  final List<HotAndNewData> _comingSoonList;
+  @override
+  List<HotAndNewData> get comingSoonList {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_comingSoonList);
+  }
+
+  final List<HotAndNewData> _everyoneIsWatchingList;
+  @override
+  List<HotAndNewData> get everyoneIsWatchingList {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_everyoneIsWatchingList);
+  }
+
+  @override
+  final bool isLoading;
+  @override
+  final bool hasError;
 
   @override
   String toString() {
-    return 'HotAndNewState.initial()';
+    return 'HotAndNewState(comingSoonList: $comingSoonList, everyoneIsWatchingList: $everyoneIsWatchingList, isLoading: $isLoading, hasError: $hasError)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType &&
+            other is _$_Initial &&
+            const DeepCollectionEquality()
+                .equals(other._comingSoonList, _comingSoonList) &&
+            const DeepCollectionEquality().equals(
+                other._everyoneIsWatchingList, _everyoneIsWatchingList) &&
+            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
+            const DeepCollectionEquality().equals(other.hasError, hasError));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_comingSoonList),
+      const DeepCollectionEquality().hash(_everyoneIsWatchingList),
+      const DeepCollectionEquality().hash(isLoading),
+      const DeepCollectionEquality().hash(hasError));
 
+  @JsonKey(ignore: true)
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
+  _$$_InitialCopyWith<_$_Initial> get copyWith =>
+      __$$_InitialCopyWithImpl<_$_Initial>(this, _$identity);
 }
 
 abstract class _Initial implements HotAndNewState {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial(
+      {required final List<HotAndNewData> comingSoonList,
+      required final List<HotAndNewData> everyoneIsWatchingList,
+      required final bool isLoading,
+      required final bool hasError}) = _$_Initial;
+
+  @override
+  List<HotAndNewData> get comingSoonList;
+  @override
+  List<HotAndNewData> get everyoneIsWatchingList;
+  @override
+  bool get isLoading;
+  @override
+  bool get hasError;
+  @override
+  @JsonKey(ignore: true)
+  _$$_InitialCopyWith<_$_Initial> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -5,8 +5,23 @@ import 'package:netflix/presentation/home/widgets/column_btn_home.dart';
 import '../../widgets/video_widget_new_and_hot.dart';
 
 class ComingSoonWidget extends StatelessWidget {
+  final String id;
+  final String month;
+  final String year;
+  final String day;
+  final String posterPath;
+  final String movieName;
+  final String description;
+
   const ComingSoonWidget({
     Key? key,
+    required this.id,
+    required this.month,
+     required this.year,
+    required this.day,
+    required this.posterPath,
+    required this.movieName,
+    required this.description,
   }) : super(key: key);
 
   @override
@@ -20,17 +35,17 @@ class ComingSoonWidget extends StatelessWidget {
           height: 450,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
-            children: const [
+            children: [
               Text(
-                'FEB',
-                style: TextStyle(
+                month,
+                style: const TextStyle(
                   fontSize: 16,
                   color: kGrey,
                 ),
               ),
               Text(
-                '11',
-                style: TextStyle(
+                day,
+                style: const TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 4,
@@ -45,20 +60,24 @@ class ComingSoonWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const VideoWidgetNewAndHot(),
+              VideoWidgetNewAndHot(image: posterPath),
               kHeight20,
               kHeight,
               Row(
-                children: const [
-                  Text(
-                    'Tall girl 2',
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
+                children: [
+                  Expanded(
+                    child: Text(
+                      movieName,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                  Spacer(),
-                  ColumnButtonHome(
+                  kWidth20,
+                  const ColumnButtonHome(
                     icon: Icons.notifications_outlined,
                     title: "Remind Me",
                     iconSize: 25,
@@ -66,7 +85,7 @@ class ComingSoonWidget extends StatelessWidget {
                     fontColor: kGrey,
                   ),
                   kWidth,
-                  ColumnButtonHome(
+                  const ColumnButtonHome(
                     icon: Icons.info_outline,
                     title: "Info",
                     iconSize: 25,
@@ -77,21 +96,24 @@ class ComingSoonWidget extends StatelessWidget {
                 ],
               ),
               kHeight,
-              const Text(
-                'Coming on friday',
+              Text(
+                'Coming on $day $month $year' ,
               ),
               kHeight,
-              const Text(
-                'Tall Girl 2',
-                style: TextStyle(
+              Text(
+                movieName,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               kHeight,
-              const Text(
-                "Landing the lead in the school musical is a dream come true for Jodi, untill the pressure sends her confidence - and her relationship - into a tailspin",
-                style: TextStyle(
+              Text(
+                description,
+                maxLines: 4,
+                style: const TextStyle(
                   color: kGrey,
                 ),
               ),

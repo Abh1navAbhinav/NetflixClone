@@ -7,6 +7,8 @@ import 'package:netflix/application/bloc_search/search_bloc.dart';
 import 'package:netflix/domain/core/di/injectable.dart';
 import 'package:netflix/presentation/main_page.dart/screen_main_page.dart';
 
+import 'application/bloc_hot_and_new/hot_and_new_bloc.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await confifureInjection();
@@ -23,6 +25,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => getIt<DownloadBloc>()),
         BlocProvider(create: (context) => getIt<SearchBloc>()),
         BlocProvider(create: (context) => getIt<FastLaughBloc>()),
+        BlocProvider(create: (context) => getIt<HotAndNewBloc>()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
