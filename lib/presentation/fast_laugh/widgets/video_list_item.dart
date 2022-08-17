@@ -3,6 +3,7 @@ import 'package:netflix/application/bloc_fast_laugh/fast_laugh_bloc.dart';
 import 'package:netflix/core/constants.dart';
 import 'package:netflix/domain/downloads/modals/modal_downloads.dart';
 import 'package:netflix/presentation/fast_laugh/widgets/video_action_widget.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoListItemInheritedWidget extends InheritedWidget {
@@ -99,9 +100,20 @@ class VideoListItem extends StatelessWidget {
                       icon: Icons.add,
                       text: 'My List',
                     ),
-                    const VideoActionWidget(
-                      icon: Icons.share,
-                      text: 'Share',
+                    GestureDetector(
+                      onTap: () {
+                        final movieName =
+                            VideoListItemInheritedWidget.of(context)
+                                ?.movieData
+                                .title;
+                        if (movieName != null) {
+                          Share.share(movieName);
+                        }
+                      },
+                      child: const VideoActionWidget(
+                        icon: Icons.share,
+                        text: 'Share',
+                      ),
                     ),
                     const VideoActionWidget(
                       icon: Icons.play_arrow,
@@ -139,7 +151,7 @@ class _FastLaughVideoPlayerState extends State<FastLaughVideoPlayer> {
     _videoPlayerController = VideoPlayerController.network(widget.videoUrl);
     _videoPlayerController.initialize().then((value) {
       setState(() {});
-      _videoPlayerController.play(); 
+      _videoPlayerController.play();
     });
     super.initState();
   }
@@ -161,9 +173,10 @@ class _FastLaughVideoPlayerState extends State<FastLaughVideoPlayer> {
             ),
     );
   }
+
   @override
   void dispose() {
-   _videoPlayerController.dispose();
+    _videoPlayerController.dispose();
     super.dispose();
   }
 }
