@@ -32,7 +32,7 @@ class EveryOnesWatchingWidget extends StatelessWidget {
         const VideoWidgetNewAndHot(
           image:
               'https://www.themoviedb.org/t/p/w355_and_h200_multi_faces/6RT8SBh6AzonbLYnqjkvG4ovaVX.jpg',
-         ),
+        ),
         kHeight,
         Row(
           mainAxisAlignment: MainAxisAlignment.end,

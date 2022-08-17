@@ -6,7 +6,7 @@ class DownloadsState with _$DownloadsState {
     required bool isLoading,
     required Option<Either<MainFailures, List<Downloads>>>
         downloadsFailureOrSuccessOption,
-  required  List<Downloads> downloads,
+    required List<Downloads> downloads,
   }) = _DownloadsState;
 
   factory DownloadsState.initial() {

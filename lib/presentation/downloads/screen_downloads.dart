@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:netflix/presentation/downloads/widgets/section1.dart';
 import 'package:netflix/presentation/downloads/widgets/section2.dart';
@@ -16,7 +15,6 @@ class DownloadScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
         appBar: const PreferredSize(
           preferredSize: Size.fromHeight(50),

@@ -1,7 +1,5 @@
-
 import 'package:flutter/material.dart';
 import 'package:netflix/core/constants.dart';
-
 
 class MainCard extends StatelessWidget {
   const MainCard({
@@ -11,7 +9,7 @@ class MainCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal:8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Container(
         width: 150,
         height: 250,
