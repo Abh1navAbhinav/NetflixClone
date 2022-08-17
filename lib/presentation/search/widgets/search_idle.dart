@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netflix/application/bloc_search/search_bloc.dart';
 import 'package:netflix/core/constants.dart';
 import 'package:netflix/presentation/search/widgets/title.dart';
 
@@ -14,14 +16,37 @@ class SearchIdle extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-          const SearchTitle(title: 'Top Searches'),
+        const SearchTitle(title: 'Top Searches'),
         kHeight,
         Expanded(
-          child: ListView.separated(
-            shrinkWrap: true,
-            itemBuilder: (context, index) => const TopSearches(),
-            separatorBuilder: (context, index) => kHeight20,
-            itemCount: 15,
+          child: BlocBuilder<SearchBloc, SearchState>(
+            builder: (context, state) {
+              if (state.isLoading) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              } else if (state.isError) {
+                return const Center(
+                  child: Text('Error while getting data'),
+                );
+              } else if (state.idleList.isEmpty) {
+                return const Center(
+                  child: Text('List is empty'),
+                );
+              }
+              return ListView.separated(
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  final movie = state.idleList[index];
+                  return TopSearches(
+                    imageUrls: '$imageAppendUrl${movie.posterPath}',
+                    title: movie.title ?? 'no title provided',
+                  );
+                },
+                separatorBuilder: (context, index) => kHeight20,
+                itemCount: state.idleList.length,
+              );
+            },
           ),
         )
       ],
@@ -30,7 +55,13 @@ class SearchIdle extends StatelessWidget {
 }
 
 class TopSearches extends StatelessWidget {
-  const TopSearches({Key? key}) : super(key: key);
+  final String title;
+  final String imageUrls;
+  const TopSearches({
+    Key? key,
+    required this.imageUrls,
+    required this.title,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -42,19 +73,17 @@ class TopSearches extends StatelessWidget {
           height: 80,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
-            image: const DecorationImage(
+            image: DecorationImage(
               fit: BoxFit.cover,
-              image: NetworkImage(
-                imageUrl,
-              ),
+              image: NetworkImage(imageUrls),
             ),
           ),
         ),
         kWidth,
-        const Expanded(
+        Expanded(
           child: Text(
-            'Movie Name',
-            style: TextStyle(
+            title,
+            style: const TextStyle(
               color: kWhite,
               fontWeight: FontWeight.bold,
               fontSize: 16,
