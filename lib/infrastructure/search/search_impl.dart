@@ -9,7 +9,7 @@ import '../../domain/core/api_end_points.dart';
 
 
 @LazySingleton(as: SearchService )
-class searchImpl implements SearchService {
+class SearchImpl implements SearchService {
   @override
   Future<Either<MainFailures, SearchResp>> searchMovies(
       {required String movieQuery}) async {

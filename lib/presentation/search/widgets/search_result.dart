@@ -29,7 +29,7 @@ class SearchResult extends StatelessWidget {
                 children: List.generate(20, (index) {
                   final movie = state.searchResultList[index];
                   return MainCard(
-                    imageUrl: movie.PosterImageUrl,
+                    imageUrl: movie.posterImageUrl,
                   );
                 }),
               );

@@ -10,7 +10,7 @@ class DownloadScreen extends StatelessWidget {
 
   final _widgetList = [
     const Section1(),
-    Section2(),
+    const Section2(),
     const Section3(),
   ];
 
