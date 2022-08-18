@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netflix/application/bloc_home/home_bloc.dart';
 import 'package:netflix/core/constants.dart';
 import 'package:netflix/presentation/home/widgets/background_image_btn.dart';
 import 'package:netflix/presentation/home/widgets/number_title_card.dart';
@@ -12,6 +14,9 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      BlocProvider.of<HomeBloc>(context).add(const GetHomeScreenData());
+    });
     return Scaffold(
       body: SafeArea(
         child: ValueListenableBuilder(
@@ -29,23 +34,67 @@ class HomeScreen extends StatelessWidget {
               },
               child: Stack(
                 children: [
-                  ListView(
-                    children: const [
-                      BackgroundImgBtnHome(),
-                      MainTitleCard(
-                        title: 'Released in the Past Year',
-                      ),
-                      MainTitleCard(
-                        title: 'Trending Now',
-                      ),
-                      NumberTitleCard(),
-                      MainTitleCard(
-                        title: 'Tense Dramas',
-                      ),
-                      MainTitleCard(
-                        title: 'South Indian Cinema',
-                      ),
-                    ],
+                  BlocBuilder<HomeBloc, HomeState>(
+                    builder: (context, state) {
+                      if (state.isLoading) {
+                        return const Center(
+                          child: CircularProgressIndicator(strokeWidth: 2),
+                        );
+                      }
+                      if (state.hasError) {
+                        return const Center(
+                          child: Text(
+                            'Error while getting data',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        );
+                      }
+                      /* released past year */
+                      final releasesPastYear = state.pastYearMovieList
+                          .map((e) => '$imageAppendUrl${e.posterPath}')
+                          .toList();
+                      // releasesPastYear.shuffle();
+                      /* trending  */
+                      final trendingList = state.trendingMovieList
+                          .map((e) => '$imageAppendUrl${e.posterPath}')
+                          .toList();
+                      // trendingList.shuffle();
+                      /*  tense dramas movie list */
+                      final tensedramaList = state.tenseDramasMovieList
+                          .map((e) => '$imageAppendUrl${e.posterPath}')
+                          .toList();
+                      // tensedramaList.shuffle();
+                      /* south indian movie list  */
+                      final southIndianList = state.southIndianMovieList
+                          .map((e) => '$imageAppendUrl${e.posterPath}')
+                          .toList();
+                      // southIndianList.shuffle();
+                      /* list view */
+                      return ListView(
+                        children: [
+                          const BackgroundImgBtnHome(),
+                          MainTitleCard(
+                            title: 'Released in the Past Year',
+                            posterList: releasesPastYear,
+                          ),
+                          MainTitleCard(
+                            title: 'Trending Now',
+                            posterList: trendingList,
+                          ),
+                          const NumberTitleCard(),
+                          MainTitleCard(
+                            title: 'Tense Dramas',
+                            posterList: tensedramaList,
+                          ),
+                          MainTitleCard(
+                            title: 'South Indian Cinema',
+                            posterList: southIndianList,
+                          ),
+                        ],
+                      );
+                    },
                   ),
                   scrollNotifier.value
                       ? AnimatedContainer(

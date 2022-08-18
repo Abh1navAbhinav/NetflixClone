@@ -56,7 +56,7 @@ class ComingSoonWidget extends StatelessWidget {
         ),
         SizedBox(
           width: size.width - 55,
-          height: 450,
+          // height: 450,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -112,7 +112,7 @@ class ComingSoonWidget extends StatelessWidget {
               kHeight,
               Text(
                 description,
-                maxLines: 4,
+                
                 style: const TextStyle(
                   color: kGrey,
                 ),
