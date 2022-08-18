@@ -7,7 +7,7 @@ class EveryOnesWatchingWidget extends StatelessWidget {
   final String posterPath;
   final String movieName;
   final String description;
-  
+
   const EveryOnesWatchingWidget({
     Key? key,
     required this.posterPath,
@@ -21,24 +21,25 @@ class EveryOnesWatchingWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         kHeight,
-        const Text(
-          'Friends',
-          style: TextStyle(
+        Text(
+          movieName,
+          style: const TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
         ),
         kHeight,
-        const Text(
-          "This hits sitcon follows the merry misadventures of six 20-something pals as they navigate the pitfalls of work, life and love in 1990s Manhattan.",
-          style: TextStyle(
+        Text(
+          description,
+          // maxLines: 4,
+          // overflow: TextOverflow.ellipsis,
+          style: const TextStyle(
             color: kGrey,
           ),
         ),
         kHeight50,
-        const VideoWidgetNewAndHot(
-          image:
-              'https://www.themoviedb.org/t/p/w355_and_h200_multi_faces/6RT8SBh6AzonbLYnqjkvG4ovaVX.jpg',
+        VideoWidgetNewAndHot(
+          image: posterPath,
         ),
         kHeight,
         Row(

@@ -19,9 +19,11 @@ class VideoWidgetNewAndHot extends StatelessWidget {
             borderRadius: kRadius5,
             image: DecorationImage(
               image: NetworkImage(
+                
                 image,
               ),
               fit: BoxFit.cover,
+              
             ),
           ),
         ),
