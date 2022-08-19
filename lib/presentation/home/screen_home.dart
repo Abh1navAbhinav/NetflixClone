@@ -71,6 +71,12 @@ class HomeScreen extends StatelessWidget {
                           .map((e) => '$imageAppendUrl${e.posterPath}')
                           .toList();
                       // southIndianList.shuffle();
+                      //top ten tv list
+                      final topTenTvList = state.trendingTvList.map(
+                        (e) {
+                          return '$imageAppendUrl${e.posterPath}';
+                        },
+                      ).toList();
                       /* list view */
                       return ListView(
                         children: [
@@ -83,7 +89,8 @@ class HomeScreen extends StatelessWidget {
                             title: 'Trending Now',
                             posterList: trendingList,
                           ),
-                          const NumberTitleCard(),
+                          NumberTitleCard(
+                              posterList: topTenTvList.sublist(0, 10)),
                           MainTitleCard(
                             title: 'Tense Dramas',
                             posterList: tensedramaList,

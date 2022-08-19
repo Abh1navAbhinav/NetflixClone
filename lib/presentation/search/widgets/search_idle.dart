@@ -5,9 +5,7 @@ import 'package:netflix/application/bloc_search/search_bloc.dart';
 import 'package:netflix/core/constants.dart';
 import 'package:netflix/presentation/search/widgets/title.dart';
 
-const imageUrl =
-    "https://www.themoviedb.org/t/p/w355_and_h200_multi_faces/sWvxBXNtCOaGdtpKNLiOqmwb10N.jpg";
-
+ 
 class SearchIdle extends StatelessWidget {
   const SearchIdle({Key? key}) : super(key: key);
 
